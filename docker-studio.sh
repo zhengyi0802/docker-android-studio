@@ -16,6 +16,8 @@ docker run -it --net=host --rm \
        -v /work/Workspace:/work/Workspace \
        -v /work/Android:/work/Android \
        -v /work/home/puser:/home/puser \
+       -v /dev/kvm:/dev/kvm \
+       --privileged -v /dev/bus/usb:/dev/bus/usb \
        -e XAUTHORITY=$XAUTHORITY \
        -e DISPLAY=unix$DISPLAY \
        -e uid=1000 \
