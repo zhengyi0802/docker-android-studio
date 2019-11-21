@@ -7,8 +7,11 @@ if [ -z "$result" ]; then
    sudo docker load --input /work/docker/images/studio-bionic.tar
 fi
 
-echo "set priviledge for X11"
+echo "set privilege for X11"
 setfacl -m user:1000:r ${HOME}/.Xauthority
+
+echo "set /dev/kvm privilege"
+sudo chmod 777 /dev/kvm
 
 echo "docker run"
 docker run -it --net=host --rm \

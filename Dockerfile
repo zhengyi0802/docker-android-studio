@@ -21,7 +21,7 @@ RUN apt-get install -y nano ant
 RUN apt-get install -y openjdk-8-jdk
 
 # Install prerequisites
-RUN apt-get install -y libz1 libncurses5 libbz2-1.0:i386 libstdc++6 libbz2-1.0 lib32stdc++6 lib32z1
+RUN apt-get install -y libz1 libncurses5 libbz2-1.0:i386 libstdc++6 libbz2-1.0 lib32stdc++6 lib32z1 git
 
 
 # Clean up
