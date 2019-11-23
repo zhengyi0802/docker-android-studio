@@ -5,7 +5,10 @@ RUN dpkg --add-architecture i386
 RUN apt-get update
 
 # Download specific Android Studio bundle (all packages).
-RUN apt-get install -y curl tar
+RUN apt-get install -y curl tar 
+RUN apt-get install --reinstall tzdata
+
+RUN echo "Asia/Taipei" > /etc/timezone
 
 RUN curl 'https://dl.google.com/dl/android/studio/ide-zips/3.5.2.0/android-studio-ide-191.5977832-linux.tar.gz?hl=zh-cn' > /tmp/studio.tar.gz && tar -zxvf /tmp/studio.tar.gz --directory=/opt && rm /tmp/studio.tar.gz
 
@@ -15,7 +18,7 @@ RUN apt-get install -y xorg
 
 
 # Install other useful tools
-RUN apt-get install -y nano ant
+RUN apt-get install -y nano ant pulseaudio
 
 # install Java
 RUN apt-get install -y openjdk-8-jdk
